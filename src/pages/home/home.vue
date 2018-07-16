@@ -9,15 +9,15 @@
 <template>
     <div  class="content">
         home
-        
+        {{get_usercenter_switchbtn.text}}
     </div>
 </template>
 <script>
-// import { mapGetters, mapActions } from 'vuex'
-// import store from '../../store/indexStore.js';
+import { mapGetters, mapActions } from 'vuex'
+
 
 export default {
-    // computed: mapGetters(['get_usercenter_switchbtn']),
+    computed: mapGetters(['get_usercenter_switchbtn']),
     name:'home',
 	data () {
 		return {
@@ -25,7 +25,7 @@ export default {
 		}
 	},
 	mounted () {
-		//this.count_message();
+		this.count_message();
         
 	},
 	methods: {

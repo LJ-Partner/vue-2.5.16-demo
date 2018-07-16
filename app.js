@@ -2,6 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routes from "./src/routes/routes.js";
 import components from './src/components/index.js'
+import store from './src/store/indexStore.js'
+import App from './app.vue';
 Vue.use(VueRouter);
 //初始化组件
 Object.keys(components).forEach((key) => {
@@ -63,5 +65,7 @@ route.beforeEach((to, from, next) => {
 // });
 // 
 new Vue({
-    router:route
+    router:route,
+    store:store,
+    render: h => h(App)
 }).$mount('#app');
